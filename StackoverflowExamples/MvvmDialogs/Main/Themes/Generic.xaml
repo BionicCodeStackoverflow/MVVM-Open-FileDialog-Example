@@ -1,0 +1,148 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:example1="clr-namespace:Main.Examples.Example1.SimpleCodeBehindMethodCall.View"
+                    xmlns:example2="clr-namespace:Main.Examples.Example2.DataBinding.View"
+                    xmlns:example3="clr-namespace:Main.Examples.Example3.DataBindingWithDataValidation.View"
+                    xmlns:example4="clr-namespace:Main.Examples.Example4.OpenMessageDialogFromViewModel.View">
+  <Style TargetType="example1:Example1Page">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="example1:Example1Page">
+
+          <Grid Margin="0,12">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- The data to persist. -->
+            <StackPanel>
+              <TextBlock Text="Username:" />
+              <TextBox Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Username, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <!-- 
+                 Show the file dialog. 
+                 User must explicitly trigger the file save operation. 
+                 This button will be disabled until the required input is valid 
+            -->
+            <Button Grid.Column="1"
+                    Content="Save as (dummy operation)"
+                    Command="{x:Static example1:Example1Page.ShowFileBrowserCommand}" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="example2:Example2Page">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="example2:Example2Page">
+          <Grid Margin="0,12">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- The data to persist. -->
+            <StackPanel>
+              <TextBlock Text="Username:" />
+              <TextBox Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Username, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <!-- 
+                 Show the file dialog. 
+                 User must explicitly trigger the file save operation. 
+                 The Username value is send to the view model class via data binding 
+                 by updating the SaveUsernameDestinationPath property from code-behind 
+            -->
+            <Button Grid.Column="1"
+                    Content="Save as (dummy operation)"
+                    Command="{x:Static example2:Example2Page.ShowFileBrowserCommand}" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="example3:Example3Page">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="example3:Example3Page">
+          <StackPanel>
+
+            <!-- The data to persist. Value is validated in the view model. -->
+            <StackPanel>
+              <TextBlock Text="Username:" />
+              <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Username, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <!-- Show the file dialog.  -->
+            <Grid Margin="0,12">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <TextBlock Grid.Column="0"
+                         Text="{TemplateBinding SaveUsernameDestinationPath}" />
+              <Button Grid.Column="1"
+                      Content="Open dialog"
+                      Command="{x:Static example3:Example3Page.ShowFileBrowserCommand}" />
+            </Grid>
+
+            <!-- 
+                 Let user explicitly trigger the file save operation. 
+                 This button will be disabled until the required input is valid.
+                 The SaveUsernameCommand value is provided by the Bidng to the Example3ViewModel
+            -->
+            <Button Content="Save as (dummy operation)"
+                    Command="{TemplateBinding SaveUsernameCommand}" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="example4:Example4Page">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="example4:Example4Page">
+          <StackPanel>
+
+            <!-- The data to persist. Value is validated in the view model. -->
+            <StackPanel>
+              <TextBlock Text="Username:" />
+              <TextBox Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Username, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" />
+            </StackPanel>
+
+            <!-- Show the file dialog.  -->
+            <Grid Margin="0,12">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <TextBlock Grid.Column="0"
+                         Text="{TemplateBinding SaveUsernameDestinationPath}" />
+              <Button Grid.Column="1"
+                      Content="Open dialog"
+                      Command="{x:Static example4:Example4Page.ShowFileBrowserCommand}" />
+            </Grid>
+
+            <!-- 
+                 Let user explicitly trigger the file save operation. 
+                 This button will be disabled until the required input is valid.
+                 The SaveUsernameCommand value is provided by the Bidng to the Example3ViewModel
+            -->
+            <Button Content="Save as (dummy operation)"
+                    Command="{TemplateBinding SaveUsernameCommand}" />
+
+            <FlowDocumentScrollViewer Height="300"
+                                      Document="{TemplateBinding ImportantNoteDocument}" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

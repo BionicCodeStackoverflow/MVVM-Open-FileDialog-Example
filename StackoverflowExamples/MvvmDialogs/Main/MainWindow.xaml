@@ -1,0 +1,85 @@
+﻿<Window x:Class="Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        xmlns:example1View="clr-namespace:Main.Examples.Example1.SimpleCodeBehindMethodCall.View"
+        xmlns:example2View="clr-namespace:Main.Examples.Example2.DataBinding.View"
+        xmlns:example3View="clr-namespace:Main.Examples.Example3.DataBindingWithDataValidation.View"
+        xmlns:example4View="clr-namespace:Main.Examples.Example4.OpenMessageDialogFromViewModel.View"
+        xmlns:example1ViewModel="clr-namespace:Main.Examples.Example1.SimpleCodeBehindMethodCall.ViewModel"
+        xmlns:example2ViewModel="clr-namespace:Main.Examples.Example2.DataBinding.ViewModel"
+        xmlns:example3ViewModel="clr-namespace:Main.Examples.Example3.DataBindingWithDataValidation.ViewModel"
+        xmlns:example4ViewModel="clr-namespace:Main.Examples.Example4.OpenMessageDialogFromViewModel.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450" 
+        Width="1040">
+  <Window.Resources>
+    <ControlTemplate x:Key="ValidationErrorTemplate">
+      <StackPanel>
+        <Border BorderBrush="Red"
+                BorderThickness="2"
+                Background="Transparent"
+                ToolTip="{Binding /ErrorContent}">
+          <AdornedElementPlaceholder />
+        </Border>
+        <Popup IsOpen="True" 
+               AllowsTransparency="True">
+          <Border Background="White"
+                  BorderBrush="Red"
+                  BorderThickness="2">
+            <TextBlock Text="{Binding /ErrorContent}" />
+          </Border>
+        </Popup>
+      </StackPanel>
+    </ControlTemplate>
+    
+    <DataTemplate DataType="{x:Type example1ViewModel:Example1ViewModel}">
+      <example1View:Example1Page />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type example2ViewModel:Example2ViewModel}">
+      <example2View:Example2Page Username="{Binding Username}"
+                                 SaveUsernameDestinationPath="{Binding DestinationFilePath}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type example3ViewModel:Example3ViewModel}">
+      <example3View:Example3Page Username="{Binding Username, ValidatesOnNotifyDataErrors=True}"
+                                 SaveUsernameCommand="{Binding SaveUsernameCommand, ValidatesOnNotifyDataErrors=True}"
+                                 SaveUsernameDestinationPath="{Binding DestinationFilePath}"
+                                 Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}" />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type example4ViewModel:Example4ViewModel}">
+      <example4View:Example4Page Username="{Binding Username, ValidatesOnNotifyDataErrors=True}"
+                                 SaveUsernameCommand="{Binding SaveUsernameCommand}"
+                                 SaveUsernameDestinationPath="{Binding DestinationFilePath, ValidatesOnNotifyDataErrors=True}"
+                                 Validation.ErrorTemplate="{StaticResource ValidationErrorTemplate}" />
+    </DataTemplate>
+  </Window.Resources>
+
+  <StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Button Content="Example #1: code-behind"
+              Command="{Binding SelectPageContextCommand}"
+              CommandParameter="{x:Static local:PageId.Example1}"
+              Margin="4,0" />
+      <Button Content="Example #2: data binding"
+              Command="{Binding SelectPageContextCommand}"
+              CommandParameter="{x:Static local:PageId.Example2}"
+              Margin="4,0" />
+      <Button Content="Example #3: data binding and data validation"
+              Command="{Binding SelectPageContextCommand}"
+              CommandParameter="{x:Static local:PageId.Example3}"
+              Margin="4,0" />
+      <Button Content="Example #4: Send a message from the Model to the View (open Dialog from Model)"
+              Command="{Binding SelectPageContextCommand}"
+              CommandParameter="{x:Static local:PageId.Example4}"
+              Margin="4,0" />
+    </StackPanel>
+
+    <ContentControl Content="{Binding CurrentPageContext}" />
+  </StackPanel>
+</Window>
