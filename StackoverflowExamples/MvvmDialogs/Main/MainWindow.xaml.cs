@@ -30,7 +30,7 @@
 
       this.EventAggregator = new EventAggregator();
       var dataContext = new MainViewModel(this.EventAggregator);
-
+      this.DataContext = dataContext;
       this.EventAggregator.TryRegisterGlobalObserver(nameof(IApplicationMessageSource.ApplicationMessageDispatched), OnApplicationMessageDispatched);
       this.EventAggregator.TryRegisterGlobalObserver(nameof(INotifyPropertyChanged.PropertyChanged), new PropertyChangedEventHandler(OnEventSourcePropertyChanged));
     }

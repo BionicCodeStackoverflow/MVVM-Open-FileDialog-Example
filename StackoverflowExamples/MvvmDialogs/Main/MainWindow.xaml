@@ -15,7 +15,8 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450" 
-        Width="1040">
+        Width="1040"
+        Padding="12">
   <Window.Resources>
     <ControlTemplate x:Key="ValidationErrorTemplate">
       <StackPanel>

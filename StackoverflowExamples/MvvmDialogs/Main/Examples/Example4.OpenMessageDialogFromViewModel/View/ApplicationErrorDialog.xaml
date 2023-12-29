@@ -23,7 +23,7 @@
                Grid.RowSpan="2"
                Text="&#xEB90;"
                FontFamily="Segoe MDL2 Assets"
-               FontSize="64"
+               FontSize="48"
                Foreground="Red"
                Background="Transparent"
                VerticalAlignment="Center"
@@ -33,7 +33,7 @@
                Grid.RowSpan="2"
                Text="&#xEA39;"
                FontFamily="Segoe MDL2 Assets"
-               FontSize="64"
+               FontSize="48"
                Background="Transparent"
                VerticalAlignment="Center"
                Margin="24" />
@@ -43,7 +43,8 @@
              Margin="24"
              IsReadOnly="True"
              Text="{Binding Path=., Mode=OneTime}"
-             FontSize="12"
+             FontSize="16"
+             TextWrapping="Wrap"
              Cursor="Arrow"
              BorderBrush="Transparent" />
 

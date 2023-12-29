@@ -24,7 +24,7 @@
     public event EventHandler<ApplicationMessageDispatchedEventArgs> ApplicationMessageDispatched;
 
     internal void SaveUsername(string? userName, string? destinationFilePath) 
-      => OnApplicationMessageDispatched("Error saving username! No network connection. (Send from Model)");
+      => OnApplicationMessageDispatched($"Error saving username! No network connection. {Environment.NewLine}Message sent from Model.");
 
     private void OnApplicationMessageDispatched(string message)
       => this.ApplicationMessageDispatched?.Invoke(this, new ApplicationMessageDispatchedEventArgs(message, MessageSeverity.Error));
