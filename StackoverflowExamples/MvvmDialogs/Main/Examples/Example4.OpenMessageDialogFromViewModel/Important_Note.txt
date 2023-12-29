@@ -5,8 +5,10 @@ Such communication can never be legal in terms of clean application design when 
 Because there is nothing like a "user" or UI in the context of the View Model and Model, 
 there is no need or requirement to show something in the UI to a potential user.
 
-When an fatal error has occured like the lost of a network connection you usually must throw an exception (may after a number of retries). For example, a NetworkConnectionLostException. 
-This exception can then be handled at View Model level or directly at View level to ask the user to retry the attempted action after troubleshooting the network connection. When the Model can't operate due to a certain illegal state, it must throw.
+When an fatal error has occured like the lost of a network connection you usually must throw an exception (may after a number of retries). 
+For example, a NetworkConnectionLostException. 
+This exception can then be handled at View Model level or directly at View level to ask the user to retry the attempted action after troubleshooting the network connection. 
+When the Model can't operate due to a certain illegal state, it must throw.
 
 If the user can help the application to recover, then catch and handle this exception in the View and communicate to the user what he has to do.
 If the user can't help, then the application must crash (log the exception and send the error report to the developer).
@@ -27,6 +29,7 @@ In a scenario outside the unit test, a UI can catch that exception to involve th
 But for the Model itself, the only correct behavior is to stop working! The data integrity is lost and the application's state has become unpredictable.
 There is nothing meaningful the Model (application) can do.
 
-Although it is possible to send messages to the UI/user across the MVVM boundaries without violating the MVVM dependency graph (see example #4), such kind of communication will always violate MVVM in terms of component responsibilities.
+Although it is possible to send messages to the UI/user across the MVVM boundaries without violating the MVVM dependency graph (see example #4), 
+such kind of communication will always violate MVVM in terms of component responsibilities.
 
 There must be a very good reason to break the architecture and design choices imposed by the MVVM design pattern.
