@@ -14,7 +14,7 @@
         xmlns:example4ViewModel="clr-namespace:MvvmDialogs.Main.Examples.Example4.OpenMessageDialogFromViewModel.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450" 
+        Height="600" 
         Width="1040"
         Padding="12">
   <Window.Resources>
@@ -27,7 +27,8 @@
           <AdornedElementPlaceholder />
         </Border>
         <Popup IsOpen="True" 
-               AllowsTransparency="True">
+               AllowsTransparency="True"
+               PlacementTarget="{Binding ElementName=Border}">
           <Border Background="White"
                   BorderBrush="Red"
                   BorderThickness="2">
