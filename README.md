@@ -16,7 +16,7 @@ Solution that uses data binding to sende the dialog data to the _view model_ and
 
 
 __Solution 3:__   
-Another, more elegant solution that builds on solution #2 and uses data validation in the _view model_ ([How to add validation to view model properties or how to implement `INotifyDataErrorInfo`](https://stackoverflow.com/a/56608064/3141792)) and an `ICommand` to send the dialog result to the _view model_ and execute the persistence operation in the _model_.
+Another, more elegant solution that builds on solution #2 and uses data validation in the _view model_ (GitHub: [Data_Validation_Example](https://github.com/BionicCodeStackoverflow/Data_Validation_Example.git), Stackoverflow: [How to add validation to view model properties or how to implement `INotifyDataErrorInfo`](https://stackoverflow.com/a/56608064/3141792)) and an `ICommand` to send the dialog result to the _view model_ and execute the persistence operation in the _model_.
 
 __Solution #4:__   
 Shows how the _view model_ or _model_ can open a dialog in _view_ by using a messaging infracstructure based on the _Event Aggregator_ design pattern. 
