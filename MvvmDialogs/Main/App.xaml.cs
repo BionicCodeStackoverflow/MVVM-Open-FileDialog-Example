@@ -1,4 +1,4 @@
-﻿namespace Main
+﻿namespace MvvmDialogs.Main
 {
   using System.Configuration;
   using System.Data;

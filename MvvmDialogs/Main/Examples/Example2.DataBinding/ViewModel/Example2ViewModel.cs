@@ -1,4 +1,4 @@
-﻿namespace Main.Examples.Example2.DataBinding.ViewModel
+﻿namespace MvvmDialogs.Main.Examples.Example2.DataBinding.ViewModel
 {
   using System;
   using System.Collections.Generic;

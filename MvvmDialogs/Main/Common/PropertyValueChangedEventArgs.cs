@@ -1,4 +1,4 @@
-﻿namespace Main.Common
+﻿namespace MvvmDialogs.Main.Common
 {
   using System.ComponentModel;
   using System.Windows.Media.Converters;

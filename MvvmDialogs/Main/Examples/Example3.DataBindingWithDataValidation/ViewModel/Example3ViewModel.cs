@@ -1,4 +1,4 @@
-﻿namespace Main.Examples.Example3.DataBindingWithDataValidation.ViewModel
+﻿namespace MvvmDialogs.Main.Examples.Example3.DataBindingWithDataValidation.ViewModel
 {
   using System;
   using System.Collections.Generic;

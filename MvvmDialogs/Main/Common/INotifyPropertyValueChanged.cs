@@ -1,4 +1,4 @@
-﻿namespace Main.Common
+﻿namespace MvvmDialogs.Main.Common
 {
   internal interface INotifyPropertyValueChanged
   {

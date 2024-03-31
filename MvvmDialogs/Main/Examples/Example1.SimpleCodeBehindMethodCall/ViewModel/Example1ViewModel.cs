@@ -1,4 +1,4 @@
-﻿namespace Main.Examples.Example1.SimpleCodeBehindMethodCall.ViewModel
+﻿namespace MvvmDialogs.Main.Examples.Example1.SimpleCodeBehindMethodCall.ViewModel
 {
   using System;
   using System.Collections.Generic;

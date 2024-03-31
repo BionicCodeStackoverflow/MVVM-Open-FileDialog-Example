@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Main.Common
+namespace MvvmDialogs.Main.Common
 {
   /// <inheritdoc />
   [Serializable]

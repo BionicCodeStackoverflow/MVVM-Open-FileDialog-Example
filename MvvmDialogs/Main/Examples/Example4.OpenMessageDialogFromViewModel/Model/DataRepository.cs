@@ -1,4 +1,4 @@
-﻿namespace Main.Examples.Example4.OpenMessageDialogFromViewModel.Model
+﻿namespace MvvmDialogs.Main.Examples.Example4.OpenMessageDialogFromViewModel.Model
 {
   using System;
   using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿namespace Main.Examples.Example4.OpenMessageDialogFromViewModel.View
+﻿namespace MvvmDialogs.Main.Examples.Example4.OpenMessageDialogFromViewModel.View
 {
   using System;
   using System.Collections.Generic;
@@ -25,14 +25,14 @@
   /// Add this XmlNamespace attribute to the root element of the markup file where it is 
   /// to be used:
   ///
-  ///     xmlns:MyNamespace="clr-namespace:Main.SimpleCodeBehind.View"
+  ///     xmlns:MyNamespace="clr-namespace:MvvmDialogs.Main.SimpleCodeBehind.View"
   ///
   ///
   /// Step 1b) Using this custom control in a XAML file that exists in a different project.
   /// Add this XmlNamespace attribute to the root element of the markup file where it is 
   /// to be used:
   ///
-  ///     xmlns:MyNamespace="clr-namespace:Main.SimpleCodeBehind.View;assembly=Main.SimpleCodeBehind.View"
+  ///     xmlns:MyNamespace="clr-namespace:MvvmDialogs.Main.SimpleCodeBehind.View;assembly=Main.SimpleCodeBehind.View"
   ///
   /// You will also need to add a project reference from the project where the XAML file lives
   /// to this project and Rebuild to avoid compilation errors:

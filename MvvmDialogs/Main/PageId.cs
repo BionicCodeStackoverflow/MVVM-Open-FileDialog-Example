@@ -1,4 +1,4 @@
-﻿namespace Main
+﻿namespace MvvmDialogs.Main
 {
   public enum PageId
   {
