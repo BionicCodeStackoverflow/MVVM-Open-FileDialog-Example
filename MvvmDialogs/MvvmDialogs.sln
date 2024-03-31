@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmDialogs.Main", "Main\MvvmDialogs.Main.csproj", "{B8EC3D5C-ECE1-4CF4-9081-D3A009A19104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmDialogs.Main", "MvvmDialogs.Main\MvvmDialogs.Main.csproj", "{266A4FBA-7AD2-4EE0-A533-3E5221D4701F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8EC3D5C-ECE1-4CF4-9081-D3A009A19104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8EC3D5C-ECE1-4CF4-9081-D3A009A19104}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8EC3D5C-ECE1-4CF4-9081-D3A009A19104}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8EC3D5C-ECE1-4CF4-9081-D3A009A19104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{266A4FBA-7AD2-4EE0-A533-3E5221D4701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266A4FBA-7AD2-4EE0-A533-3E5221D4701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266A4FBA-7AD2-4EE0-A533-3E5221D4701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266A4FBA-7AD2-4EE0-A533-3E5221D4701F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
